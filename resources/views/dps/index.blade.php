@@ -5,24 +5,25 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Design Patterns</div>
+                <div class="panel-heading">Design Patterns (total:{!!  $dps->total() !!})</div>
                  
                 <div class="panel-body">
                     All Design Patterns
                     <div><br></div>
                     @foreach ($dps as $dp)
                     
-                    
-                        <div> <img src="{{ $dp->thumbnail }}" height="190" width="220"></div>                
-                        <div> {{ $dp->name }}</div>
-                        <div> {{ $dp->description }}</div>
-                        <div> {{ $dp->eagleFile}}</div>
-                        <div> {{ $dp->productUsedIn }}</div>
+                        <a href="dps/{{ $dp->id }}">
+                            <div> <img src="{{ $dp->thumbnail }}" height="190" width="220"></div>                
+                            <div> {{ $dp->name }}</div>
+                        </a>
                         <br>
                         
                     @endforeach
                     
+                    
+                    
                 </div>
+                {!! $dps->render() !!}
             </div>
         </div>
     </div>

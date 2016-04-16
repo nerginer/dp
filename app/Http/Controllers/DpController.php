@@ -12,8 +12,19 @@ class DpController extends Controller
 {
      public function index()
     {
-        $dps = Dp::all();
+        $dps = Dp::Paginate(1);
+      //  $dps->setPath('custom/url');
         
-        return view('dp.dp',compact('dps'));
+       // return $dps;
+        
+        return view('dps.index',compact('dps'));
+    }
+    
+     public function show(DP $dp)
+    {
+       
+        //$dp = Dp::find($id);
+        //return $dp;
+        return view('dps.show',compact('dp'));
     }
 }

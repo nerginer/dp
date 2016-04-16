@@ -23,4 +23,6 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/dp', 'DpController@index');
+Route::get('dps', 'DpController@index');
+
+Route::get('dps/{dp}', 'DpController@show');
