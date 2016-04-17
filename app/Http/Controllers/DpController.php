@@ -14,7 +14,7 @@ class DpController extends Controller
 {
      public function index()
     {
-        $dps = Dp::Paginate(1);
+        $dps = Dp::Paginate(3);
         $tag = 0;
         
        // return $dps;
@@ -33,7 +33,7 @@ class DpController extends Controller
      public function tag(tag $tag)
     {
        
-       $dps = $tag->dps()->Paginate(1);
+       $dps = $tag->dps()->Paginate(3);
     
        //return $dps;
        return view('dps.index',compact('dps'),compact('tag'));

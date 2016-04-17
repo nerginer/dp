@@ -19,7 +19,7 @@
                     @foreach ($dps as $dp)
                     
                         <a href="/dps/{{ $dp->id }}">
-                            <div> <img src="/{{ $dp->thumbnail }}" height="190" width="220"></div>                
+                            <div> <img src="/thumbnail/{{ $dp->slug }}.jpg" height="190" width="220"></div>                
                             <div> {{ $dp->name }}</div>
                             <div> by:{{ $dp->user->name }}</div>
                             

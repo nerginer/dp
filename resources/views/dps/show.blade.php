@@ -13,8 +13,8 @@
                    
                        
                     
-                        <div><embed type="image/svg+xml"  src="/{{ $dp->svgFile }}" height="390" width="420" /></div>  
-                       
+                        
+                        <div><embed src="/sch_pdf/{{ $dp->slug }}.pdf" width="800" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"></div>  
                        
                         <div> {{ $dp->name }}</div>
                        
