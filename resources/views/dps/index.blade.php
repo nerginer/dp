@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     All Design Patterns 
                     @if ($tag !== 0)
-                           <b> with tag: {{$tag->name}}</b>
+                           <b> <br> tag: {{$tag->name}}</b>
                     @endif
                         
                     
@@ -21,6 +21,8 @@
                         <a href="/dps/{{ $dp->id }}">
                             <div> <img src="/{{ $dp->thumbnail }}" height="190" width="220"></div>                
                             <div> {{ $dp->name }}</div>
+                            <div> by:{{ $dp->user->name }}</div>
+                            
                         </a>
                         <br>
                         
