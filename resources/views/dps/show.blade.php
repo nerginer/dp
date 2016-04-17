@@ -28,7 +28,7 @@
                         
                              @foreach ($dp->tags as $tag)
                                   
-                                <li> {{ $tag->name }}</li>
+                                <a href="tags/{{ $tag->id }}"> <li> {{ $tag->name }}</li></a>
                              
                             @endforeach
                         

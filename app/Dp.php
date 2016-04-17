@@ -9,7 +9,18 @@ class Dp extends Model
 {
       public function tags()
     {
-       return $this->hasMany(tag::class);
+       return $this->belongsToMany(tag::class);
        
     }
+
+
+
+	public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+  
+
+
 }
