@@ -28,3 +28,6 @@ Route::get('dps', 'DpController@index');
 Route::get('dps/{dp}', 'DpController@show');
 
 Route::get('dps/tags/{tag}', 'DpController@tag');
+
+Route::get('q', 'DpController@search');
+
