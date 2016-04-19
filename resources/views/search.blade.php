@@ -5,7 +5,7 @@
 
 
 
-<a href="{{ url($link.'/dps') }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Add</a>
+<a href="{{ url($link) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Add</a>
 
 <div class="input-group custom-search-form">
     <input type="text" class="form-control" name="search" placeholder="Search...">

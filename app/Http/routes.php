@@ -25,12 +25,14 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('dps', 'DpController@index');
 
+Route::get('dps/create', 'CreateController@dp_create');
+
 Route::get('dps/{dp}', 'DpController@show');
 
 Route::get('dps/tags/{tag}', 'DpController@tag');
 
 Route::get('q', 'DpController@search');
 
-Route::get('create/dps', 'CreateController@dp_create');
+
 
 Route::get('licence', 'DpController@licence');
