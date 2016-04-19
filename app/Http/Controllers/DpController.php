@@ -13,6 +13,14 @@ use App\tag;
 
 class DpController extends Controller
 {
+    
+    
+//       public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
+    
+    
      public function index()
     {
         $dps = Dp::Paginate(4);
@@ -53,4 +61,15 @@ class DpController extends Controller
         return view('dps.index',compact('dps'),compact('tag'));  
 
      }
+     
+     
+     
+
+    
+    
+    public function licence()
+    {
+        return view('licence');
+    }
+     
 }

@@ -31,3 +31,6 @@ Route::get('dps/tags/{tag}', 'DpController@tag');
 
 Route::get('q', 'DpController@search');
 
+Route::get('create/dps', 'CreateController@dp_create');
+
+Route::get('licence', 'DpController@licence');

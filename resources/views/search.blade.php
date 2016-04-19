@@ -1,7 +1,11 @@
 
 
-{!! Form::open(['method'=>'GET','url'=>$url,'class'=>'navbar-form navbar-left','role'=>'search'])  !!}
-<a href="{{ url($link.'/create') }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Add</a>
+
+<form action="{{$url}}" class='navbar-form navbar-left' method="GET">
+
+
+
+<a href="{{ url($link.'/dps') }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Add</a>
 
 <div class="input-group custom-search-form">
     <input type="text" class="form-control" name="search" placeholder="Search...">
@@ -11,4 +15,4 @@
         </button>
     </span>
 </div>
-{!! Form::close() !!}
+</form>
