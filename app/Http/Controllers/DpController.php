@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Dp;
 use App\tag;
+use App\Category;
 
 use Illuminate\Support\Facades\Validator;
 
@@ -27,10 +28,15 @@ class DpController extends Controller
     {
         $dps = Dp::Paginate(4);
         $tag = 0;
+        $categories = Category::all();
+        
+        
         
        // return $dps;
+      //  return view('dps.index')->with('categories', 'dps','tag');
         
-        return view('dps.index',compact('dps'),compact('tag'));
+        return view('dps.index',array('dps' => $dps,'tag' => $tag,'categories' =>$categories));
+     //compact('categories'),compact('dps'),compact('tag'));
     }
     
      public function show(DP $dp)

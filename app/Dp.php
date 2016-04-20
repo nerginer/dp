@@ -13,7 +13,11 @@ class Dp extends Model
        
     }
 
-
+    public function categories()
+    {
+       return $this->belongsToMany(Category::class);
+       
+    }
 
 	public function user()
     {
