@@ -27,15 +27,15 @@ class DpController extends Controller
      public function index()
     {
         $dps = Dp::Paginate(4);
-        $tag = 0;
+        $tags =tag::all();
         $categories = Category::all();
-        
+        $tag=0;
         
         
        // return $dps;
       //  return view('dps.index')->with('categories', 'dps','tag');
         
-        return view('dps.index',array('dps' => $dps,'tag' => $tag,'categories' =>$categories));
+        return view('dps.index',array('dps' => $dps,'tags' => $tags,'tag' => $tag,'categories' =>$categories));
      //compact('categories'),compact('dps'),compact('tag'));
     }
     
@@ -51,9 +51,11 @@ class DpController extends Controller
     {
        
        $dps = $tag->dps()->Paginate(4);
-    
+       $tags =tag::all();
+       $categories = Category::all();
        //return $dps;
-       return view('dps.index',compact('dps'),compact('tag'));
+       return view('dps.index',array('dps' => $dps,'tags' => $tags,'tag' => $tag,'categories' =>$categories));
+       //return view('dps.index',compact('dps'),compact('tag'));
         
     }
     
@@ -63,10 +65,13 @@ class DpController extends Controller
         $search = \Request::get('search');
        	
        	$dps = Dp::where('name', 'LIKE', '%' . $search . '%')->paginate(4);
-        
+        $tags =tag::all();
+        $categories = Category::all();
         $tag = 0;  
         
-        return view('dps.index',compact('dps'),compact('tag'));  
+        return view('dps.index',array('dps' => $dps,'tags' => $tags,'tag' => $tag,'categories' =>$categories));
+        
+        
 
      }
      

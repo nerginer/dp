@@ -39,8 +39,9 @@
                     
                     <ul>
                      
-                            <li>tag1</li>
-                            <li>tag2</li>
+                        @foreach ($tags as $t)
+                           <a href="/dps/tags/{{ $t->id }}"> <li>{{ $t->name }}</li></a>
+                        @endforeach
                        
                     </ul>
                    
