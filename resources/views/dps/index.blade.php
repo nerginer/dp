@@ -23,7 +23,30 @@
                     </ul>
                    
                 </div>
-            </div>    
+            </div> 
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h3 class="panel-title" style="padding-left:15px;">Tags</h3>
+                       
+                    </div>
+                    
+                </div>
+                    
+                 
+                <div class="panel-body">
+                    
+                    <ul>
+                     
+                            <li>tag1</li>
+                            <li>tag2</li>
+                       
+                    </ul>
+                   
+                </div>
+            </div> 
+            
         </div>    
         <div class="col-sm-8">    
             <div class="panel panel-default">
