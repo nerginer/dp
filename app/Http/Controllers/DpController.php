@@ -99,7 +99,7 @@ class DpController extends Controller
                  return view('message')->with('message', 'Your message has been sent. Thank You!');
 
 
-                //return View::make('contact');  
+               
         }else{
                 //return contact form with errors
                 $errors = $validator->errors()->all();
@@ -111,10 +111,7 @@ class DpController extends Controller
         }
      }
     
-     
-     
-
-    
+   
     
     public function licence()
     {

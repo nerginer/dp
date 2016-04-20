@@ -70,13 +70,15 @@
                         <div class="form-group">
                             <input type="radio" value="open" name="val"> From Open Source Project:  Enter link below <input class ='form-control' type="text" name="opensourceproject"><br>
                             <input type="radio" value="mydesgin" name="val"> It is my design Licance Type: 
-                                <select>
-                                  <option value="volvo">CC BY</option>
-                                  <option value="saab">SHAREALIKE/CC BY-SA</option>
-                                  <option value="mercedes">NODERIVS/CC BY-ND</option>
-                                  <option value="audi">NONCOMMERCIAL/CC BY-NC</option>
-                                  <option value="saab">NONCOMMERCIAL-SHAREALIKE/CC BY-NC-SA</option>
-                                  <option value="mercedes">NONCOMMERCIAL-NODERIVS/CC BY-NC-ND</option>
+                        </div>
+                        <div class="form-group">
+                                <select name="licenceType">
+                                  <option value="CC BY">CC BY</option>
+                                  <option value="SHAREALIKE/CC BY-SA">SHAREALIKE/CC BY-SA</option>
+                                  <option value="NODERIVS/CC BY-ND">NODERIVS/CC BY-ND</option>
+                                  <option value="NONCOMMERCIAL/CC BY-NC">NONCOMMERCIAL/CC BY-NC</option>
+                                  <option value="NONCOMMERCIAL-SHAREALIKE/CC BY-NC-SA">NONCOMMERCIAL-SHAREALIKE/CC BY-NC-SA</option>
+                                  <option value="NONCOMMERCIAL-NODERIVS/CC BY-NC-ND">NONCOMMERCIAL-NODERIVS/CC BY-NC-ND</option>
                                 </select>
                             <a href="/licence">More info on Licence</a> 
                             
