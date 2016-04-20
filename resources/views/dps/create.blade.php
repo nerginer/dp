@@ -46,7 +46,8 @@
                         
                     </ul>
                     
-                    <form action="/create/dps" method="POST">
+                    <form action="/dps/sendForm" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     
                         <!-- Name form input -->
                         <div class="form-group">

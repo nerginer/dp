@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Dp;
 use App\tag;
 
+use Illuminate\Support\Facades\Validator;
+
 
 
 
@@ -62,6 +64,53 @@ class DpController extends Controller
 
      }
      
+     public function sendForm()
+    {
+       
+        //Get all the data and store it inside Store Variable
+        $data = \Request::all();
+
+        //Validation rules
+        //{"_token":"dMKekQkq5Wqn4efEiXlNuEaYqpUIkU63HGwMed2c","name":"TestName","description":"Testdescription","baseComponent":"testbase","pdf":"testbaselink","val":"open","opensourceproject":"opensourcelink","tags":"teattag1,teattag2","eaglefile":"Breadboard_power r3.sch"}
+        $rules = array (
+            'name' => 'required',// uncomment if you want to grab this field
+        //    'description' => 'required|min:10',
+            //'email' => 'required|email',  uncomment if you want to grab this field
+         //   'eaglefile' => 'required'
+        );
+
+        //Validate data
+        $validator = Validator::make ($data, $rules);
+
+        //If everything is correct than run passes.
+        if ($validator -> passes()){
+            
+           
+
+           \Mail::send('emails.newDp', $data, function($message) use ($data)
+            {
+                //$message->from($data['email'] , $data['first_name']); uncomment if using first name and email fields 
+                $message->from('newDP@makerstorage', 'New Design Pattern Arrived');
+                //email 'To' field: cahnge this to emails that you want to be notified.                    
+                $message->to('nerginer@gmail.com', 'Nuri')->cc('nerginer@gnexlab.com')->subject('New Design Pattern');
+
+            });
+                // Redirect to page
+                 return view('message')->with('message', 'Your message has been sent. Thank You!');
+
+
+                //return View::make('contact');  
+        }else{
+                //return contact form with errors
+                $errors = $validator->errors()->all();
+
+                return view('message',compact('errors'));
+                
+                
+
+        }
+     }
+    
      
      
 
@@ -70,6 +119,11 @@ class DpController extends Controller
     public function licence()
     {
         return view('licence');
+    }
+    
+     public function message()
+    {
+        return view('message');
     }
      
 }

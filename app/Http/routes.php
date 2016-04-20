@@ -33,6 +33,9 @@ Route::get('dps/tags/{tag}', 'DpController@tag');
 
 Route::get('q', 'DpController@search');
 
+Route::post('dps/sendForm', 'DpController@sendForm');
 
 
 Route::get('licence', 'DpController@licence');
+
+Route::get('message', 'DpController@message');
