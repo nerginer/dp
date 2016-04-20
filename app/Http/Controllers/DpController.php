@@ -69,6 +69,10 @@ class DpController extends Controller
        
         //Get all the data and store it inside Store Variable
         $data = \Request::all();
+        
+        $user  = \Auth::user();
+        
+      //  return $data;
 
         //Validation rules
         //{"_token":"dMKekQkq5Wqn4efEiXlNuEaYqpUIkU63HGwMed2c","name":"TestName","description":"Testdescription","baseComponent":"testbase","pdf":"testbaselink","val":"open","opensourceproject":"opensourcelink","tags":"teattag1,teattag2","eaglefile":"Breadboard_power r3.sch"}
@@ -87,7 +91,7 @@ class DpController extends Controller
             
            
 
-           \Mail::send('emails.newDp', $data, function($message) use ($data)
+           \Mail::send('emails.newDp',  array('user' => $user,'data' => $data), function($message) use ($data)
             {
                 //$message->from($data['email'] , $data['first_name']); uncomment if using first name and email fields 
                 $message->from('newDP@makerstorage', 'New Design Pattern Arrived');
